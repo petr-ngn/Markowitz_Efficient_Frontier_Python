@@ -1,7 +1,7 @@
 # Markowitz Efficient Frontier using Python
 This Python script is dedicated to the portfolio optimization using Markowitz's theory about the efficient frontier within a modern portfolio theory (MPT), i.e., optimal portfolios offering higher expected returns for a defined portfolio volatility level and/or optimal portfolios offering lower portfolio volatilities for a defined portfolio expected return level, both thanks to the portfolio diversification.
 
-As an input, I have used closing prices of 3 assets: S&P500, gold and IYR ETF tracking a market-cap-weighted index of US real estate equities. Such combination was selected in belief due to the low correlation between the assets' prices movements, thus this would result in a portfolio diversification.
+As an input, I have used closing prices of 3 assets: S&P500, gold and IYR ETF tracking a market-cap-weighted index of US real estate equities. Such combination was selected in the belief that due to the low correlation between the assets' prices movements, it would be possible to achieive a portfolio diversification.
 
 ## Approach
 
