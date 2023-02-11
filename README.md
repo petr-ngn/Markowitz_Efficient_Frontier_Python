@@ -13,9 +13,9 @@ Based on the assets' price changes, let us calculate an average daily return for
 
 $$\overline{r}_{Daily} = \frac{1}{n} \sum_{i=1}^{n} \Delta P_{i}$$
 
-Based on the assets' the average daily returns, let us calculate an expected return for each asset as:
+Based on the assets' the average daily returns, let us calculate an expected return using compounded interest (with 250 trading days) for each asset as:
 
-$$E(r) = {\left(1 + \overline{r}_{Daily}\right)}^{360}-1$$
+$$E(r) = {\left(1 + \overline{r}_{Daily}\right)}^{250}-1$$
 
 Based on the assets' price changes, let us calculate the variance of price changes for each asset as:
 
@@ -35,8 +35,10 @@ $$V =
                C_{a_{k-1}, a_1} & C_{a_{k-1}, a_2} & \dots & \sigma_{a_{k-1}}^{2} & C_{a_{k-1}, a_k} \\
                C_{a_k, a_1} & C_{a_k, a_2} & \dots & C_{a_k, a_{k-1}} & \sigma_{a_k}^{2} \\
      \end{bmatrix}$$
+     
+ - The diagonal of given matrix contains variances of assets' price changes, whereas the covariances between the assets' price changes are located outside the diagonal.
 
-Next, let us create combinations of assets' weights within a portfolio, i.e., portfolio combinations, using permutations with iterables ranging from 0 to 100 (i.e., the weights) and the length of $k$ matrix (where $k$ is a number of assets). From such generated combinations, we then filter such combinations which sum up to 100 (i.e., the sum of all assets' weight should equal to 100%).
+Next, let us create combinations of assets' weights within a portfolio, i.e., portfolio combinations, using permutations with iterables ranging from 0 to 100 (i.e., the weights) and the length of $k$ (where $k$ is a number of assets). From such generated combinations, we then filter such combinations which sum up to 100 (i.e., the sum of all assets' weights should equal to 100%).
 
 
 Then for each portfolio (combination of assets' weights), we calculate a portfolio expected return as a weighted sum of the assets' expected returns as:
@@ -44,7 +46,7 @@ Then for each portfolio (combination of assets' weights), we calculate a portfol
 $$E(r)_{P} = \sum_{i=1}^{k} w_i \times E(r)_{i}$$
 
 
-Pertaining to the portfolio volatility (portfolio risk), let us first denote a vector assets' weights (for a single combination) as:
+Pertaining to the portfolio volatility (portfolio risk), let us first denote a vector of assets' weights (for a single combination) as:
 
 $$a = 
       \begin{bmatrix}
@@ -55,7 +57,7 @@ $$a =
       w_{a_k} \\
       \end{bmatrix}$$
 
-Thus, using the covariance matrix of the assets' price changes and the assets' weight's vector, we then calculate a portfolio volatility for each portfolio (i.e., combination of assets' weights) using the matrix multiplication as:
+Thus, using the covariance matrix of the assets' price changes and the assets' weights' vector, we then calculate a portfolio volatility for each portfolio (i.e., combination of assets' weights) using the matrix multiplication as:
 
 $$\sigma_{P} = \sqrt{a^{T} \times V \times a}$$
 
