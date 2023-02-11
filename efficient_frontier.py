@@ -172,17 +172,21 @@ efficient_portfolios = efficient_frontier(portfolios)
 #Function for plotting the portfolios including the efficient frontier.
 def portfolios_plot(portfolios, efficient_portfolios):
 
-    plt.figure(figsize = (17,10))
+    plt.figure(figsize = (18,11))
 
     plt.scatter(portfolios['port_std'],portfolios['port_er'], c = portfolios['sharpe'])
 
     plt.plot(efficient_portfolios['port_std'], efficient_portfolios['port_er'], '-', linewidth=3.5, color = 'grey')
 
-    plt.colorbar(label = 'Sharpe Ratio')
+    plt.colorbar().set_label(label = 'Sharpe Ratio', size = 15)
 
-    plt.xlabel('Portfolio Volatility')
-    plt.ylabel('Portfolio Expected Return')
-    
+    plt.xlabel('Portfolio Volatility', size = 15)
+    plt.ylabel('Portfolio Expected Return', size = 15)
+
+    plt.title('Efficient Frontier', size = 20)
+
+    plt.tight_layout()
+
     plt.show()
 
 
