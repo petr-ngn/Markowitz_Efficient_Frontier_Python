@@ -62,4 +62,4 @@ In order to obtain the efficient portfolios (i.e., portfolios lying on the effic
 Thus, by looking for such portfolios which are dominant in terms of both maximizing portfolio expected return or minimizing portfolio volatility, we are then able to construct an efficient frontier.
 
 
-![alt_text](https://raw.githubusercontent.com/petr-ngn/Markowitz_Efficient_Frontier_Python/main/portfolios_plot.png)
+![alt_text](https://raw.githubusercontent.com/petr-ngn/Markowitz_Efficient_Frontier_Python/main/portfolios_plot.jpg)
